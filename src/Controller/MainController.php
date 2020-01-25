@@ -24,4 +24,12 @@ class MainController extends AbstractController
     {
         return $this->render('info/index.html.twig');
     }
+
+    /**
+     * @Route("/schedules", name="schedules")
+     */
+    public function schedules()
+    {
+        return $this->render('schedules/index.html.twig');
+    }
 }

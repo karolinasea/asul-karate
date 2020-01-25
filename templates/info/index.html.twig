@@ -1,50 +1,106 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}À Propos{% endblock %}
+{% block title %}Informations{% endblock %}
 
 {% block body %}
 
-<div class="container">
-    <h2 class="pt-3 font-weight-bold">Jenny Vellani</h2>
-    <h3>Partenaire vins, Champagnes et spiritueux pour les restaurants, cavistes, traiteurs.</h3>
+    <div class="pb-5">
+        <div class="infoContent mt-3 p-4">
+            <h4 class="p-1 h4InfoTitles rounded"><a href="schedules.html">Horaires :</a></h4>
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <h5 class="pt-1">Baby karaté</h5>
+                <ul>
+                    <li>Mardi de 17h30 à 18h05</li>
+                    <li>Mercredi de 18h00 à 18h35</li>
+                </ul>
+                <h5>Karaté enfants</h5>
+                <ul>
+                    <li>Mardi de 18h05 à 18h50</li>
+                    <li>Mercredi de 18h40 à 19h30</li>
+                </ul>
+                <h5>Karaté adultes</h5>
+                <ul>
+                    <li>Mardi de 18h50 à 19h50 : Ado, adultes tous niveaux.</li>
+                    <li>Mercredi de 19h30 à 20h30 : Ado adultes débutant et intermédiaires Kata kumité.</li>
+                    <li>Mercredi de 20h30 à 21h30 : Ado adultes Avancés et gradés kata, technique.</li>
+                </ul>
+            </div>
+        </div>
 
-</div>
+        <div class="infoContent mt-3 p-4">
+            <h4 class="p-1 h4InfoTitles rounded"><a href="schedules.html">Dojos :</a></h4>
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <ul>
+                    <li>
+                        <a href="https://www.google.com/maps/place/125+Rue+Tronchet,+69006+Lyon/@45.7710858,4.8561755,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4ea8e6d02fba5:0x8f9309454dbc163e!8m2!3d45.7710858!4d4.8583642" target="_blank" class="font-weight-bold">Dojo Rue Tronchet :
+                        </a>
+                        <address>
+                            25, rue Tronchet<br>69006 Lyon
+                        </address>
+                    </li>
+                    <li>
+                        <a href="https://www.google.fr/maps/place/UFRSTAPS/@45.7804507,4.8614991,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4ea979329cdcf:0xf66f38f7f8df35f!8m2!3d45.780447!4d4.8636878" target="_blank" class="font-weight-bold">Dojo UFR STAPS la DOUA Université lyon1
+                        </a>
+                        <address>
+                            Université Claude Bernard Lyon 1<br>
+                            23-29, boulevard du 11 Novembre 1918<br>
+                            69622 Villeurbanne
+                        </address>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-<div id="infoIntro" class="container d-flex flex-lg-row p-3">
-    <img class="p-2 mb-3" src="http://lif.sci-web.net/~atout-vins/public/images/JV.jpg" alt="photo profil Jenny Villani" id="profileImg">
-    <p class="lead d-flex align-items-md-center px-3">Originaire du Sud-Ouest, Je suis en Auvergne depuis plus de 20 ans et je n'ai pas perdu l'accent. Apres avoir gerer un restaurant au Lac Chambon (63) pendant 4 ans, j'ai obtenu une Mention Complementaire Sommelerie au Lycee Hotellier de Chamalieres (63).</p>
-</div>
+        <div class="infoContent mt-3 p-4">
+            <h4 class="p-1 h4InfoTitles rounded">Professeurs :</h4>
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <ul id="profs">
+                    <li>Eric NUGUES (6ème Dan)</li>
+                    <li>Fabrice PANTALEON (5ème Dan)</li>
+                </ul>
+            </div>
+        </div>
 
-<div class="container pb-3">
-    <div class="infoH4">
-        <img class="grapesIcon" src="http://lif.sci-web.net/~atout-vins/public/images/grapes.png" alt="icon grapes"/>
-        <h4>Sommelière, j’épaule les professionnels dans leur sélection</h4>
+        <div class="infoContent mt-3 p-4">
+            <h4 class="p-1 h4InfoTitles rounded">Infos sur le Karaté :</h4>
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <h5>Téléchargements (pdf)</h5>
+                <p>Pour les passages de grade :
+                    <a href="docs/programme_kyus.pdf" target="_blank">programme kyus</a>
+                </p>
+                <p>
+                    Détail des différentes techniques du Karaté shotokan :
+                    <a href="docs/techniques.pdf" target="_blank">techniques karaté</a>
+                </p>
+                <p>
+                    Termes en japonais expliqués par KimHan :
+                    <a href="docs/termes.pdf" target="_blank">termes</a>
+                </p>
+                <p>
+                    Statistiques de la fédération depuis sa création en 1976 :
+                    <a href="docs/statistiques.pdf" target="_blank">statistiques</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="infoContent mt-3 p-4">
+            <h4 class="p-1 h4InfoTitles rounded">Liens :</h4>
+            <div class="d-flex flex-column align-items-center justify-content-center">
+                <ul>
+                    <li>
+                        <a href="https://www.ffkarate.fr" target="_blank">Le site officiel de la FFKAMA</a>
+                    </li>
+                    <li>
+                        <a href="http://www.infokarate.com" target="_blank">Info karaté :</a>
+                        Retrouvez toutes les infos : cours, pédagogie, calendrier, vidéos...
+                    </li>
+                    <li>
+                        <a href="http://users.skynet.be/jacqgill/karate/pts_vitaux.html" target="_blank">Points Viteaux :</a>
+                        Descriptif rapide des points vitaux du corps humain
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <ul>
-        <li>1500 références de vins, champagnes et spiritueux.</li>
-        <li>4 départements : Puy-de-Dôme, Allier, Loire, Cantal.</li>
-        <li>175 clients : restaurants 50 %, cavistes 42 %, traiteurs 8 %.</li>
-    </ul>
 
-    <div class="infoH4">
-        <img class="grapesIcon" src="http://lif.sci-web.net/~atout-vins/public/images/grapes.png" alt="icon grapes"/>
-        <h4>Formatrice, je forme leurs salariés pour la commercialisation des vins</h4>
-    </div>
-    <ul>
-        <li>Sous-traitante du centre de formation H&C Conseil, dans le cadre des budgets fournis par les OPCA</li>
-        <ul>
-            <li>6 formations en intra en 2018,</li>
-            <li>5 formations en intra de prévues en 2019 à ce jour.</li>
-        </ul>
-    </ul>
-
-    <div class="infoH4">
-        <img class="grapesIcon" src="http://lif.sci-web.net/~atout-vins/public/images/grapes.png" alt="icon grapes"/>
-    <h4>Commerciale, j’épaule les professionnels pour leurs opérations commerciales</h4>
-    </div>
-    <ul>
-        <li>Mise en relation avec mes partenaires pour faciliter leur achats (création d’une association d’entreprise LE CARRE DES PROS)</li>
-        <li>Assistance pour mise en valeur produit, définir ses prix de vente...</li>
-    </ul>
-</div>
 {% endblock %}

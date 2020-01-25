@@ -8,11 +8,13 @@
 let title = document.title;
 if(title == "Accueil") {
  document.getElementById("nav-home").setAttribute("class", "active");
-} else if (title == "À Propos") {
+} else if (title == "Informations") {
  document.getElementById("nav-info").setAttribute("class", "active");
 } else if (title == "Contact") {
  document.getElementById("nav-contact").setAttribute("class", "active");
-} else if (title == "Log in") {
+}  else if (title == "Horaires") {
+ document.getElementById("nav-contact").setAttribute("class", "active");
+} else if (title == "Connexion") {
  document.getElementById("nav-login").setAttribute("class", "active");
 }
 
