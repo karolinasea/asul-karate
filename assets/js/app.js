@@ -13,7 +13,7 @@ if(title == "Accueil") {
 } else if (title == "Contact") {
  document.getElementById("nav-contact").setAttribute("class", "active");
 }  else if (title == "Horaires") {
- document.getElementById("nav-contact").setAttribute("class", "active");
+ document.getElementById("nav-schedules").setAttribute("class", "active");
 } else if (title == "Connexion") {
  document.getElementById("nav-login").setAttribute("class", "active");
 }
