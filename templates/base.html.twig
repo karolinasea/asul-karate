@@ -34,7 +34,7 @@
                     <li class="nav-item" id="nav-contact">
                         <a class="nav-link" href="{{ path('contact') }}">Contactez-nous</a>
                     </li>
-                    {% if is_granted('ADMIN') %}
+                    {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item" id="nav-es-mb">
                             <a class="nav-link" href="{{ url('easyadmin') }}">Espace membres</a>
                         </li>
@@ -44,9 +44,7 @@
                             <a class="nav-link" href="{{ path('app_login') }}">{% trans %}Sign in{% endtrans %}</a>
                         </li>
                     {% endif %}
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="memberSpace.html">Espace membres</a>
-                    </li> -->
+
                 </ul>
             </div>
         </nav>

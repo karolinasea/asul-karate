@@ -1,8 +1,8 @@
 security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     role_hierarchy:
-      ADMIN:    ROLE_USER
-      ROLE_SUPER_ADMIN: [ROLE_USER, ADMIN, ROLE_ALLOWED_TO_SWITCH]
+      ROLE_ADMIN:    ROLE_USER
+      ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
     encoders:
         # use your user class name here
         App\Entity\User:
@@ -10,6 +10,7 @@ security:
             # This value auto-selects the best possible hashing algorithm
             # (i.e. Sodium when available).
             algorithm: auto
+
     providers:
         in_memory: { memory: null }
         users:
@@ -18,10 +19,18 @@ security:
                class: 'App\Entity\User'
                # the property to query by - e.g. username, email, etc
                property: 'mail'
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
                # optional: if you're using multiple Doctrine entity
                # managers, this option defines which one to use
                # manager_name: 'customer'
     firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
         main:
             anonymous: true
             provider: users
@@ -38,7 +47,7 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, roles: ADMIN }
         - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/admin, roles: ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
