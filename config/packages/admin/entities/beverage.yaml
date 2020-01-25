@@ -1,0 +1,14 @@
+easy_admin:
+    entities:
+          Beverage:
+            class: App\Entity\Beverage
+            form:
+                fields:
+                    - { property: 'producer' }
+                    - { property: 'name' }
+
+            list:
+                fields:
+                    - { property: 'producer' }
+                    - { property: 'name' }
+
