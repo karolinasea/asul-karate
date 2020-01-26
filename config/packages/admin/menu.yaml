@@ -2,9 +2,10 @@ easy_admin:
     design:
         menu:
             - { label: 'Home',  route: 'home', icon: home }
-#            - label: 'Wine'
-#            - label: 'Designation'
-#              entity: Designation
+            - label: 'User'
+              entity: User
+            - label: 'Homepage'
+              entity: HomePageText
 #              icon: 'sign'
 #            - label: 'Variety'
 #              entity: Variety

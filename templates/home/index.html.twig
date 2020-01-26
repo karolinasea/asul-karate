@@ -8,13 +8,22 @@
         <div class="d-flex flex-column align-items-center justify-content-center">
             <!-- <p class="lead">Cours de karaté</p> -->
             <hr class="my-4">
-            <p>Bonjour à tous</p>
-            <p>
-                REPRISE DES COURS MARDI 17 ET MERCREDI 18 SEPTEMBRE 2019 :<br/>
-                Nous espérons que vous avez passez de très bonnes vacances.
-                Nous voici enfin prêt pour la reprise des entraînements.
-                Nous vous attendons le mardi 17 septembre à la Salle Tronchet et le mercredi 18 septembre au gymnase de l'UFRSTAPS.
-            </p>
+
+
+
+            {% for homePageText in txt %}
+                <p> {{ homePageText.title }}</p>
+                <p> {{ homePageText.text }}</p>
+            {% endfor %}
+
+
+{#            <p>Bonjour à tous</p>#}
+{#            <p>#}
+{#                REPRISE DES COURS MARDI 17 ET MERCREDI 18 SEPTEMBRE 2019 :<br/>#}
+{#                Nous espérons que vous avez passez de très bonnes vacances.#}
+{#                Nous voici enfin prêt pour la reprise des entraînements.#}
+{#                Nous vous attendons le mardi 17 septembre à la Salle Tronchet et le mercredi 18 septembre au gymnase de l'UFRSTAPS.#}
+{#            </p>#}
         </div>
     </div>
 
