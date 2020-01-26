@@ -7,11 +7,11 @@ easy_admin:
             - label: 'Homepage'
               entity: HomePageText
 #              icon: 'sign'
-#            - label: 'Variety'
-#              entity: Variety
+            - label: 'Professor'
+              entity: Professor
 #              icon: 'globe-americas'
-#            - label: 'Color'
-#              entity: Color
+            - label: 'Dojo'
+              entity: Dojo
 #              icon: 'palette'
 #            - label: 'Wine'
 #              entity: Wine

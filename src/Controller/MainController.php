@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Dojo;
 use App\Entity\HomePageText;
+use App\Entity\Professor;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -29,10 +31,6 @@ class MainController extends AbstractController
         // in the template, print things with {{ product.name }}
          return $this->render('home/index.html.twig', ['txt' => $txt]);
 
-
-
-
-
 //        return $this->render('home/index.html.twig', [
 //            'controller_name' => 'MainController',
 //        ]);
@@ -43,7 +41,32 @@ class MainController extends AbstractController
      */
     public function info()
     {
-        return $this->render('info/index.html.twig');
+        $prof = $this->getDoctrine()
+            ->getRepository(Professor::class)
+            ->findAll();
+
+        if (!$prof) {
+            throw $this->createNotFoundException(
+                'NOTHING'
+            );
+        }
+
+        $dojo = $this->getDoctrine()
+            ->getRepository(Dojo::class)
+            ->findAll();
+
+        if (!$dojo) {
+            throw $this->createNotFoundException(
+                'NOTHING'
+            );
+        }
+
+//        return new Response('Check out this great product: '.$product->getName());
+        // or render a template in the template, print things with {{ product.name }}
+        return $this->render('info/index.html.twig', ['prof' => $prof, 'dojo' => $dojo,]);
+//        ['array' => ['dojo' => $dojo], ['prof' => $prof]]
+//        array('dojo' => $dojo, 'prof' => $prof)
+//        return $this->render('info/index.html.twig');
     }
 
     /**

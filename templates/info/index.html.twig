@@ -31,22 +31,32 @@
             <h4 class="p-1 h4InfoTitles rounded"><a href="schedules.html">Dojos :</a></h4>
             <div class="d-flex flex-column align-items-center justify-content-center">
                 <ul>
-                    <li>
-                        <a href="https://www.google.com/maps/place/125+Rue+Tronchet,+69006+Lyon/@45.7710858,4.8561755,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4ea8e6d02fba5:0x8f9309454dbc163e!8m2!3d45.7710858!4d4.8583642" target="_blank" class="font-weight-bold">Dojo Rue Tronchet :
-                        </a>
-                        <address>
-                            25, rue Tronchet<br>69006 Lyon
-                        </address>
-                    </li>
-                    <li>
-                        <a href="https://www.google.fr/maps/place/UFRSTAPS/@45.7804507,4.8614991,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4ea979329cdcf:0xf66f38f7f8df35f!8m2!3d45.780447!4d4.8636878" target="_blank" class="font-weight-bold">Dojo UFR STAPS la DOUA Université lyon1
-                        </a>
-                        <address>
-                            Université Claude Bernard Lyon 1<br>
-                            23-29, boulevard du 11 Novembre 1918<br>
-                            69622 Villeurbanne
-                        </address>
-                    </li>
+                     {% for dojo in dojo %}
+                         <li>
+                            <a href="https://www.google.com/maps/place/125+Rue+Tronchet,+69006+Lyon/@45.7710858,4.8561755,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4ea8e6d02fba5:0x8f9309454dbc163e!8m2!3d45.7710858!4d4.8583642" target="_blank" class="font-weight-bold">
+                                {{ dojo.name }}
+                            </a>
+                            <address>
+                                {{ dojo.street }} {{ dojo.zip }} {{ dojo.city }}
+                            </address>
+                        </li>
+                     {% endfor %}
+
+{#                        <a href="https://www.google.com/maps/place/125+Rue+Tronchet,+69006+Lyon/@45.7710858,4.8561755,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4ea8e6d02fba5:0x8f9309454dbc163e!8m2!3d45.7710858!4d4.8583642" target="_blank" class="font-weight-bold">Dojo Rue Tronchet :#}
+{#                        </a>#}
+{#                        <address>#}
+{#                            25, rue Tronchet<br>69006 Lyon#}
+{#                        </address>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="https://www.google.fr/maps/place/UFRSTAPS/@45.7804507,4.8614991,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4ea979329cdcf:0xf66f38f7f8df35f!8m2!3d45.780447!4d4.8636878" target="_blank" class="font-weight-bold">Dojo UFR STAPS la DOUA Université lyon1#}
+{#                        </a>#}
+{#                        <address>#}
+{#                            Université Claude Bernard Lyon 1<br>#}
+{#                            23-29, boulevard du 11 Novembre 1918<br>#}
+{#                            69622 Villeurbanne#}
+{#                        </address>#}
+{#                    </li>#}
                 </ul>
             </div>
         </div>
@@ -55,9 +65,13 @@
             <h4 class="p-1 h4InfoTitles rounded">Professeurs :</h4>
             <div class="d-flex flex-column align-items-center justify-content-center">
                 <ul id="profs">
-                    <li>Eric NUGUES (6ème Dan)</li>
-                    <li>Fabrice PANTALEON (5ème Dan)</li>
-                    <li>Samuel PELRAS (3ème Dan)</li>
+                    {% for professor in prof %}
+                        <p> {{ professor.firstName }} {{ professor.lastName }} {{ professor.grade }}</p>
+                    {% endfor %}
+
+{#                    <li>Eric NUGUES (6ème Dan)</li>#}
+{#                    <li>Fabrice PANTALEON (5ème Dan)</li>#}
+{#                    <li>Samuel PELRAS (3ème Dan)</li>#}
                 </ul>
             </div>
         </div>

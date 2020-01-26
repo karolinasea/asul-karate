@@ -1,0 +1,14 @@
+easy_admin:
+  entities:
+    Dojo:
+      class: App\Entity\Dojo
+      form:
+        fields:
+          - { property: 'name' }
+          - { property: 'street' }
+          - { property: 'zip' }
+          - { property: 'city' }
+
+      list:
+        fields:
+          - { property: 'name' }
