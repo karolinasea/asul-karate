@@ -8,22 +8,29 @@
         <div class="infoContent mt-3 p-4">
             <h4 class="p-1 h4InfoTitles rounded"><a href="schedules.html">Horaires :</a></h4>
             <div class="d-flex flex-column align-items-center justify-content-center">
-                <h5 class="pt-1">Baby karaté</h5>
+                {% for sched in schedules %}
+
+                <h5 class="pt-1">{{ sched.course }}</h5>
                 <ul>
-                    <li>Mardi de 17h30 à 18h05</li>
-                    <li>Mercredi de 18h00 à 18h35</li>
+                    <li>{{ sched.day }} de {{ sched.timeBegin }} à {{ sched.timeEnd }} : {{ sched.groupLevel }}</li>
                 </ul>
-                <h5>Karaté enfants</h5>
-                <ul>
-                    <li>Mardi de 18h05 à 18h50</li>
-                    <li>Mercredi de 18h40 à 19h30</li>
-                </ul>
-                <h5>Karaté adultes</h5>
-                <ul>
-                    <li>Mardi de 18h50 à 19h50 : Ado, adultes tous niveaux.</li>
-                    <li>Mercredi de 19h30 à 20h30 : Ado adultes débutant et intermédiaires Kata kumité.</li>
-                    <li>Mercredi de 20h30 à 21h30 : Ado adultes Avancés et gradés kata, technique.</li>
-                </ul>
+                {% endfor %}
+{#                <h5 class="pt-1">Baby karaté</h5>#}
+{#                <ul>#}
+{#                    <li>Mardi de 17h30 à 18h05</li>#}
+{#                    <li>Mercredi de 18h00 à 18h35</li>#}
+{#                </ul>#}
+{#                <h5>Karaté enfants</h5>#}
+{#                <ul>#}
+{#                    <li>Mardi de 18h05 à 18h50</li>#}
+{#                    <li>Mercredi de 18h40 à 19h30</li>#}
+{#                </ul>#}
+{#                <h5>Karaté adultes</h5>#}
+{#                <ul>#}
+{#                    <li>Mardi de 18h50 à 19h50 : Ado, adultes tous niveaux.</li>#}
+{#                    <li>Mercredi de 19h30 à 20h30 : Ado adultes débutant et intermédiaires Kata kumité.</li>#}
+{#                    <li>Mercredi de 20h30 à 21h30 : Ado adultes Avancés et gradés kata, technique.</li>#}
+{#                </ul>#}
             </div>
         </div>
 
@@ -103,32 +110,24 @@
             <div class="d-flex flex-column align-items-center justify-content-center">
                 <ul>
 
-                    {% for dojo in dojo %}
+                    {% for link in link %}
                         <li>
-                            <a href="{{ dojo.street }}" target="_blank">Le site officiel de la FFKAMA</a>
-                            <a href="https://www.google.com/maps/place/125+Rue+Tronchet,+69006+Lyon/@45.7710858,4.8561755,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4ea8e6d02fba5:0x8f9309454dbc163e!8m2!3d45.7710858!4d4.8583642" target="_blank" class="font-weight-bold">
-                                {{ dojo.name }}
-                            </a>
-                            <address>
-                                {{ dojo.street }} {{ dojo.zip }} {{ dojo.city }}
-                            </address>
+                            <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+                            {{ link.description }}
                         </li>
                     {% endfor %}
 
-
-
-
-                    <li>
-                        <a href="https://www.ffkarate.fr" target="_blank">Le site officiel de la FFKAMA</a>
-                    </li>
-                    <li>
-                        <a href="http://www.infokarate.com" target="_blank">Info karaté :</a>
-                        Retrouvez toutes les infos : cours, pédagogie, calendrier, vidéos...
-                    </li>
-                    <li>
-                        <a href="http://users.skynet.be/jacqgill/karate/pts_vitaux.html" target="_blank">Points Viteaux :</a>
-                        Descriptif rapide des points vitaux du corps humain
-                    </li>
+{#                    <li>#}
+{#                        <a href="https://www.ffkarate.fr" target="_blank">Le site officiel de la FFKAMA</a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="http://www.infokarate.com" target="_blank">Info karaté :</a>#}
+{#                        Retrouvez toutes les infos : cours, pédagogie, calendrier, vidéos...#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="http://users.skynet.be/jacqgill/karate/pts_vitaux.html" target="_blank">Points Viteaux :</a>#}
+{#                        Descriptif rapide des points vitaux du corps humain#}
+{#                    </li>#}
                 </ul>
             </div>
         </div>

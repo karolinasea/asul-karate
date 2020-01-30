@@ -4,26 +4,14 @@
 
 {% block body %}
     <div class="infoContent mt-3 p-4">
-        <h1 class="display-4">Bienvenue sur le site du club ASUL Karaté.</h1>
+        <h1 class="display-4 d-flex justify-content-center">Bienvenue sur le site du club ASUL Karaté</h1>
         <div class="d-flex flex-column align-items-center justify-content-center">
-            <!-- <p class="lead">Cours de karaté</p> -->
             <hr class="my-4">
-
-
 
             {% for homePageText in txt %}
                 <p> {{ homePageText.title }}</p>
-                <p> {{ homePageText.text }}</p>
+                <p> {{ homePageText.paragraph }}</p>
             {% endfor %}
-
-
-{#            <p>Bonjour à tous</p>#}
-{#            <p>#}
-{#                REPRISE DES COURS MARDI 17 ET MERCREDI 18 SEPTEMBRE 2019 :<br/>#}
-{#                Nous espérons que vous avez passez de très bonnes vacances.#}
-{#                Nous voici enfin prêt pour la reprise des entraînements.#}
-{#                Nous vous attendons le mardi 17 septembre à la Salle Tronchet et le mercredi 18 septembre au gymnase de l'UFRSTAPS.#}
-{#            </p>#}
         </div>
     </div>
 
@@ -31,7 +19,7 @@
         <footer class="p-3">
             <div class="container d-flex justify-content-between">
                 <div class="flex-column d-md-block">
-                    <h5 class="mb-1 font-weight-bold"><a href="contactUs.html">Contact :</a></h5>
+                    <h5 class="mb-1 font-weight-bold"><a href="{{ path('contact') }}">Contact :</a></h5>
                     <br/>
                     <p><a href="mailto: asulkarate@live.fr" class="font-weight-bold"><img src="images/email.png"alt="logo enveloppe"/> asulkarate@live.fr</a></p>
                     <p class="font-weight-bold"><a href="https://fr-fr.facebook.com/Asulkarate/" target="_blank"><img src="images/fb.png"alt="Facebook logo"/> ASUL karaté</a>

@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Dojo;
 use App\Entity\HomePageText;
+use App\Entity\Link;
 use App\Entity\Professor;
+use App\Entity\Schedules;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -21,7 +23,6 @@ class MainController extends AbstractController
 
         if (!$txt) {
             throw $this->createNotFoundException(
-                'NOTHING'
             );
         }
 
@@ -47,7 +48,7 @@ class MainController extends AbstractController
 
         if (!$prof) {
             throw $this->createNotFoundException(
-                'NOTHING'
+                'Aucun professeur'
             );
         }
 
@@ -57,13 +58,33 @@ class MainController extends AbstractController
 
         if (!$dojo) {
             throw $this->createNotFoundException(
-                'NOTHING'
+                'Aucun dojo'
+            );
+        }
+
+        $links = $this->getDoctrine()
+            ->getRepository(Link::class)
+            ->findAll();
+
+        if (!$links) {
+            throw $this->createNotFoundException(
+                'Aucun liens'
+            );
+        }
+
+        $schedules = $this->getDoctrine()
+            ->getRepository(Schedules::class)
+            ->findAll();
+
+        if (!$schedules) {
+            throw $this->createNotFoundException(
+                'Aucun horaire disponible'
             );
         }
 
 //        return new Response('Check out this great product: '.$product->getName());
         // or render a template in the template, print things with {{ product.name }}
-        return $this->render('info/index.html.twig', ['prof' => $prof, 'dojo' => $dojo,]);
+        return $this->render('info/index.html.twig', ['prof' => $prof, 'dojo' => $dojo, 'link' => $links, 'schedules' => $schedules,]);
 //        ['array' => ['dojo' => $dojo], ['prof' => $prof]]
 //        array('dojo' => $dojo, 'prof' => $prof)
 //        return $this->render('info/index.html.twig');

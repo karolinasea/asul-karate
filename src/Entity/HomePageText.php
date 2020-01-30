@@ -17,14 +17,14 @@ class HomePageText
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $text;
+    private $paragraph;
 
     public function getId(): ?int
     {
@@ -36,21 +36,21 @@ class HomePageText
         return $this->title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(?string $title): self
     {
         $this->title = $title;
 
         return $this;
     }
 
-    public function getText(): ?string
+    public function getParagraph(): ?string
     {
-        return $this->text;
+        return $this->paragraph;
     }
 
-    public function setText(?string $text): self
+    public function setParagraph(?string $paragraph): self
     {
-        $this->text = $text;
+        $this->paragraph = $paragraph;
 
         return $this;
     }
