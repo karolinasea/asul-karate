@@ -1,0 +1,20 @@
+easy_admin:
+  entities:
+    Schedules:
+      class: App\Entity\Schedules
+      form:
+        fields:
+          - { property: 'day' }
+          - { property: 'timeBegin' }
+          - { property: 'timeEnd' }
+          - { property: 'groupLevel' }
+          - { property: 'dojo' }
+          - { property: 'course' }
+
+      list:
+        fields:
+          - { property: 'day' }
+          - { property: 'timeBegin' }
+          - { property: 'timeEnd' }
+          - { property: 'course' }
+          - { property: 'dojo' }

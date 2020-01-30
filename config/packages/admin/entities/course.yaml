@@ -1,0 +1,10 @@
+easy_admin:
+  entities:
+    Course:
+      class: App\Entity\Course
+      form:
+        fields:
+          - { property: 'name' }
+      list:
+        fields:
+          - { property: 'name' }

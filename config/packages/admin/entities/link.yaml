@@ -1,0 +1,13 @@
+easy_admin:
+  entities:
+    Link:
+      class: App\Entity\Link
+      form:
+        fields:
+          - { property: 'name' }
+          - { property: 'url' }
+          - { property: 'description' }
+
+      list:
+        fields:
+          - { property: 'name' }

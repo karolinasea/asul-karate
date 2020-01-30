@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\DojoRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\CourseRepository")
  */
-class Dojo
+class Course
 {
     /**
      * @ORM\Id()
@@ -24,22 +24,7 @@ class Dojo
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $street;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $zip;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $city;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Schedules", mappedBy="dojo")
+     * @ORM\OneToMany(targetEntity="App\Entity\Schedules", mappedBy="course")
      */
     private $schedules;
 
@@ -65,42 +50,6 @@ class Dojo
         return $this;
     }
 
-    public function getStreet(): ?string
-    {
-        return $this->street;
-    }
-
-    public function setStreet(string $street): self
-    {
-        $this->street = $street;
-
-        return $this;
-    }
-
-    public function getZip(): ?string
-    {
-        return $this->zip;
-    }
-
-    public function setZip(string $zip): self
-    {
-        $this->zip = $zip;
-
-        return $this;
-    }
-
-    public function getCity(): ?string
-    {
-        return $this->city;
-    }
-
-    public function setCity(string $city): self
-    {
-        $this->city = $city;
-
-        return $this;
-    }
-
     public function __toString() {
         return $this->name;
     }
@@ -117,7 +66,7 @@ class Dojo
     {
         if (!$this->schedules->contains($schedule)) {
             $this->schedules[] = $schedule;
-            $schedule->setDojo($this);
+            $schedule->setCourse($this);
         }
 
         return $this;
@@ -128,8 +77,8 @@ class Dojo
         if ($this->schedules->contains($schedule)) {
             $this->schedules->removeElement($schedule);
             // set the owning side to null (unless already changed)
-            if ($schedule->getDojo() === $this) {
-                $schedule->setDojo(null);
+            if ($schedule->getCourse() === $this) {
+                $schedule->setCourse(null);
             }
         }
 

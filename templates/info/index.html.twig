@@ -102,6 +102,22 @@
             <h4 class="p-1 h4InfoTitles rounded">Liens :</h4>
             <div class="d-flex flex-column align-items-center justify-content-center">
                 <ul>
+
+                    {% for dojo in dojo %}
+                        <li>
+                            <a href="{{ dojo.street }}" target="_blank">Le site officiel de la FFKAMA</a>
+                            <a href="https://www.google.com/maps/place/125+Rue+Tronchet,+69006+Lyon/@45.7710858,4.8561755,17z/data=!3m1!4b1!4m5!3m4!1s0x47f4ea8e6d02fba5:0x8f9309454dbc163e!8m2!3d45.7710858!4d4.8583642" target="_blank" class="font-weight-bold">
+                                {{ dojo.name }}
+                            </a>
+                            <address>
+                                {{ dojo.street }} {{ dojo.zip }} {{ dojo.city }}
+                            </address>
+                        </li>
+                    {% endfor %}
+
+
+
+
                     <li>
                         <a href="https://www.ffkarate.fr" target="_blank">Le site officiel de la FFKAMA</a>
                     </li>
